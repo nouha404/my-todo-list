@@ -1,13 +1,12 @@
 const inputCollection = document.querySelector(".input-collect")
 const btnAddCollection = document.querySelector(".add-item")
 
+const addItem = document.querySelector(".content-items")
 const deleteCollection = document.querySelector(".delete-collection a")
-
 
 let items = [];
 btnAddCollection.addEventListener('click', ()=> {
-    const addItem = document.querySelector(".content-items")
-    // creer un div container qui aura deux enfants , un span et un div class='btn'
+    // creer un div container qui aura deux enfants , un span et un div class='btn' exemple
                 //     <div>
                 //         <span>Modu</span>
                 //         <div class="btn">-</div>
@@ -25,11 +24,9 @@ btnAddCollection.addEventListener('click', ()=> {
     } else {
         console.log("WTF")
     }
-
     // Remplir des balises span
     for(let i =0; i<items.length; i++) {
         span.innerHTML = items[i]
-
     }
     addItem.appendChild(span)
 
@@ -71,7 +68,7 @@ categoryBtn.addEventListener('click', ()=>{
 
     }
 
-    // Creer un div avec une class all-span et un enfant span
+    // Creer un div avec une class all-span et un enfant span exemple
     //     <div className="all-span">
     //         <span>1.Défaut</span>
     //     </div>
@@ -81,12 +78,29 @@ categoryBtn.addEventListener('click', ()=>{
     divAllSpan.appendChild(span)
 
     for(let i=0; i<itemsCategory.length; i++) {
-        // span.innerHTML = `${i}.${itemsCategory[i]}`
         span.innerHTML = `${i+2}.${itemsCategory[i]}`
+        // modifier les span en input lors du dbclick
+        span.addEventListener('dblclick', ()=> {
+            const input = document.createElement('input')
+            input.value = span.innerHTML
+            let inputParent = span.parentElement
+            inputParent.classList.add('add-category')
+            span.parentElement.replaceChild(input, span)
 
+            // Quand on perds le focus je veux qu''il enregistre
+            input.addEventListener('blur', ()=>{
+                span.innerHTML = `${i+2}.${input.value}`
+                // supprime la class precedant
+                inputParent.classList.remove("add-category")
+                // remplace le input par le span
+                input.parentElement.replaceChild(span, input)
+            })
+        })
 
     }
     containerCategory.appendChild(divAllSpan)
     // effacer le input
     categoryInput.value = '';
+
+
 })
