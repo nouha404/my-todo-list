@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    margin: 20px 0;
+    /*border: 1px solid black;*/
+    width: 16%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header img:hover, h1:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/*header h1 {*/
+/*    font-size: 2.4rem;*/
+/*}*/
+.container {
+    margin-top: 20px;
+    /*border: 1px solid black;*/
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+}
+.container .category {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid black;*/
+    width: 14%;
+    margin-left: 15px;
+    border-radius: 5px;
+
+}
+
+.category .all-span span:hover {
+    background: blue;
+    color: white;
+    border-radius: 5px;
+ }
+.category .all-span span {
+    /*border: 1px solid red;*/
+    height: 5vh;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    /*color: white;*/
+}
+.category .add-category {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+/*.category .default {*/
+.category .add-category input {
+    height: 5vh;
+    width: 77%;
+    border-radius: 5px;
+}
+.category .add-category input::placeholder, input:focus {
+    padding-left: 10px;
+}
+.category .add-category .btn {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: green;
+    cursor: pointer;
+}
+.category .add-category .btn:hover{
+    transform: scale(0.9);
+}
+.container .add-collection {
+    width: 80%;
+}
+.add-collection .line-input-btn {
+    display: flex;
+}
+
+.add-collection .line-input-btn input {
+    width: 90%;
+    height: 5vh;
+    border-radius: 5px 0 0 5px;
+}
+.add-collection .line-input-btn .add-item {
+    background: green;
+    height: 5vh;
+    width: 10% ;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+
+}
+.add-collection .line-input-btn .add-item:hover {
+    transform: translateX(2%);
+
+
+}
+
+
+.add-collection .content-items {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid red;*/
+}
+
+.add-collection .delete-collection {
+    margin-top: 5px;
+}
+.delete-collection a:hover {
+    color: darkred;
+}
+.add-collection .about-me {
+    /*border: 1px solid mediumslateblue;*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10vh;
+}
+.content-items span {
+
+    display: flex;
+    align-items: center;
+    height: 5vh;
+}
+.content-items div  {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    border-bottom: 1px solid #bab7b7;
+}
+
+.content-items div .btn {
+    width: 5%;
+     height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: darkred;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.content-items div .btn:hover {
+    transform: translateX(-2%);
+}
