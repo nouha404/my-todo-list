@@ -21,54 +21,62 @@ btnAddCollection.addEventListener('click', ()=> {
     // ajouter la valeur de input dans le tableau items s'il n'est pas vide
     if(inputCollection.value.trim() !== '') {
         items.push(inputCollection.value)
+
+        // Remplir des balises span
+        for(let i =0; i<items.length; i++) {
+            span.innerHTML = items[i]
+        }
+        addItem.appendChild(span)
+
+        // Ajouter les elements dans le div
+        div.appendChild(span)
+        div.appendChild(btnInsideDivContainer)
+        // Enfin Push les elements dans addItems
+        addItem.appendChild(div)
+
+        // Effacer les données de l'input'
+        inputCollection.value = '';
+        // Effacer toute la collection
+        deleteCollection.addEventListener("click", ()=> {
+            addItem.removeChild(div)
+        })
+
+        // #Recuperer l'item avec le button moins afin de suprimer l'element
+
+        addItem.addEventListener("click", (e) => {
+          // Je recherche la classe btn afin que suprimer son parent
+              if (e.target.classList.contains("btn")) {
+                e.target.parentElement.remove();
+              }
+        });
     } else {
-        console.log("WTF")
+        const input = document.querySelector(".line-input-btn input")
+        input.classList.add("wrong-infos")
+        console.log("WTF", input)
+        let delayInput = setTimeout( ()=>{
+               input.classList.add("wrong-infos")
+
+        }, 100)
+        setTimeout(()=>{
+            // clearTimeout(delay) ne fonctionne pas
+            input.classList.remove('wrong-infos')
+        }, 1000)
     }
-    // Remplir des balises span
-    for(let i =0; i<items.length; i++) {
-        span.innerHTML = items[i]
-    }
-    addItem.appendChild(span)
-
-    // Ajouter les elements dans le div
-    div.appendChild(span)
-    div.appendChild(btnInsideDivContainer)
-    // Enfin Push les elements dans addItems
-    addItem.appendChild(div)
-
-    // Effacer les données de l'input'
-    inputCollection.value = '';
-    // Effacer toute la collection
-    deleteCollection.addEventListener("click", ()=> {
-        addItem.removeChild(div)
-    })
-
-    // #Recuperer l'item avec le button moins afin de suprimer l'element
-
-    addItem.addEventListener("click", (e) => {
-      // Je recherche la classe btn afin que suprimer son parent
-          if (e.target.classList.contains("btn")) {
-            e.target.parentElement.remove();
-          }
-    });
-
 
 })
 
 // Ajout des category
 const containerCategory = document.querySelector('.category div')
-
 const categoryInput = document.querySelector('.add-category input')
 const categoryBtn = document.querySelector('.add-category .btn')
 
 itemsCategory = []
-categoryBtn.addEventListener('click', ()=>{
+categoryBtn.addEventListener('click', id=>{
+    // J'ai tous mis dans le if pour bloquer le clique avec un champ
     if(categoryInput.value.trim() !== ''){
         itemsCategory.push(categoryInput.value)
 
-    }
-
-    // Creer un div avec une class all-span et un enfant span exemple
+        // Creer un div avec une class all-span et un enfant span exemple
     //     <div className="all-span">
     //         <span>1.Défaut</span>
     //     </div>
@@ -97,10 +105,58 @@ categoryBtn.addEventListener('click', ()=>{
             })
         })
 
+        // afficher la page add-collection concerner
+        span.addEventListener('click', ()=>{
+            console.log("hello")
+        })
     }
+    // fin du boucle for
     containerCategory.appendChild(divAllSpan)
     // effacer le input
     categoryInput.value = '';
+    } else {
+
+        const wrongMsg = document.querySelector('.wrong-text')
+        const btnPlus = document.querySelector(".add-category .btn")
+        const span = document.createElement('span')
+
+        let delay = setTimeout( ()=>{
+            span.innerHTML = "Impossible d'enregistrer un champ vide"
+            wrongMsg.appendChild(span)
+            btnPlus.classList.add('wrongColor')
+
+        }, 100)
+
+        setTimeout(()=>{
+            // clearTimeout(delay) ne fonctionne pas
+            span.parentElement.removeChild(span)
+            btnPlus.classList.remove('wrongColor')
+        }, 2000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 })
+
