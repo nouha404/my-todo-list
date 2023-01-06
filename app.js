@@ -52,10 +52,9 @@ btnAddCollection.addEventListener('click', ()=> {
     } else {
         const input = document.querySelector(".line-input-btn input")
         input.classList.add("wrong-infos")
-        console.log("WTF", input)
+
         let delayInput = setTimeout( ()=>{
                input.classList.add("wrong-infos")
-
         }, 100)
         setTimeout(()=>{
             // clearTimeout(delay) ne fonctionne pas
@@ -107,7 +106,7 @@ categoryBtn.addEventListener('click', id=>{
 
         // afficher la page add-collection concerner
         span.addEventListener('click', ()=>{
-            console.log("hello")
+            console.log('A FAIRE')
         })
     }
     // fin du boucle for
@@ -133,30 +132,6 @@ categoryBtn.addEventListener('click', id=>{
             btnPlus.classList.remove('wrongColor')
         }, 2000)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
 })
 

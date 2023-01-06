@@ -102,10 +102,7 @@ header img:hover, h1:hover {
 }
 .add-collection .line-input-btn .add-item:hover {
     transform: translateX(2%);
-
-
 }
-
 
 .add-collection .content-items {
     margin-top: 10px;
@@ -121,14 +118,12 @@ header img:hover, h1:hover {
     color: darkred;
 }
 .add-collection .about-me {
-    /*border: 1px solid mediumslateblue;*/
     display: flex;
     justify-content: center;
     align-items: flex-end;
     height: 10vh;
 }
 .content-items span {
-
     display: flex;
     align-items: center;
     height: 5vh;
@@ -161,16 +156,13 @@ header img:hover, h1:hover {
 }
 .wrong-text span {
     font-size: 1.2rem;
-
     color: darkred;
 }
 .category .add-category .btn.wrongColor {
     background: darkred;
-
 }
 .wrong-infos {
     border-color: darkred;
-
 }
 .wrong-infos::placeholder {
     color: red;
