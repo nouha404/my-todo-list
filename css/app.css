@@ -5,19 +5,20 @@
 }
 header {
     margin: 20px 0;
-    /*border: 1px solid black;*/
     width: 16%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+}
+header h1 {
+    width: 70%;
 }
 header img:hover, h1:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
-/*header h1 {*/
-/*    font-size: 2.4rem;*/
-/*}*/
+
 .container {
     margin-top: 20px;
     /*border: 1px solid black;*/
@@ -28,7 +29,6 @@ header img:hover, h1:hover {
 .container .category {
     display: flex;
     flex-direction: column;
-    /*border: 1px solid black;*/
     width: 14%;
     margin-left: 15px;
     border-radius: 5px;
@@ -108,7 +108,6 @@ header img:hover, h1:hover {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    /*border: 1px solid red;*/
 }
 
 .add-collection .delete-collection {
@@ -168,3 +167,127 @@ header img:hover, h1:hover {
     color: red;
     transform: translateX(2%);
 }
+
+@media (max-width: 800px) {
+    .container .add-collection {
+        width: 70%;
+    }
+    .add-collection .line-input-btn input  {
+        width: 80%;
+    }
+    .add-collection .line-input-btn .add-item {
+        width: 20%;
+    }
+    .container .category {
+        width: 25%;
+    }
+    .content-items div .btn {
+        width: 15%;
+    }
+    header {
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 22px;
+        position: relative;
+    }
+    header h1 {
+        position: absolute;
+        left: 20%;
+    }
+    .content-items div .btn {
+        width: 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container .add-collection {
+        width: 60%;
+    }
+    .add-collection .line-input-btn {
+        position: relative;
+    }
+    .add-collection .line-input-btn input  {
+        width: 75%;
+    }
+    .add-collection .line-input-btn .add-item {
+        position: absolute;
+        right: 0;
+    }
+     .container .category {
+        width: 33%;
+    }
+    header {
+        margin: 0 21px;
+    }
+    header h1 {
+        left: 25%;
+    }
+   .content-items div .btn {
+        width: 8%;
+    }
+}
+@media (max-width: 490px) {
+    header {
+        justify-content: space-around;
+    }
+    header h1 {
+        position: unset;
+    }
+    .container .add-collection {
+        width: 50%;
+    }
+     .container .category {
+        width: 42%;
+    }
+    .add-collection .line-input-btn .add-item {
+        width: 25%;
+    }
+    .content-items div .btn {
+        width: 15%;
+    }
+
+}
+@media (max-width: 366px) {
+    .add-collection .line-input-btn input  {
+        width: 65%;
+    }
+    .add-collection .line-input-btn input::placeholder  {
+        font-size: 0.7rem;
+    }
+    .add-collection .line-input-btn .add-item {
+        width: 35%;
+        font-size: 0.9rem;
+    }
+    header {
+        margin: 0 auto;
+        width: 70% ;
+    }
+}
+@media (min-width: 802px) {
+    header {
+        width: 30%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
